@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>For You ❤️</title>
+  <style>
+    body {
+      text-align: center;
+      font-family: Arial, sans-serif;
+      background: #fff0f5;
+    }
+    h1 {
+      color: #d6336c;
+      margin-top: 40px;
+    }
+    button {
+      padding: 12px 20px;
+      font-size: 16px;
+      border: none;
+      border-radius: 20px;
+      cursor: pointer;
+      margin: 10px;
+    }
+    #yes {
+      background-color: #ff4d6d;
+      color: white;
+    }
+    #no {
+      background-color: #ccc;
+      position: absolute;
+    }
+    img {
+      width: 250px;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+
+<h1 id="question">Will you be my Valentine? 💌</h1>
+
+<button id="yes" onclick="accept()">Yes ❤️</button>
+<button id="no" onmouseover="move()">No 😜</button>
+
+<div id="rose" style="display:none;">
+  <h1>You accepted 🌹<br>A rose for you ❤️</h1>
+  <img src="rose.jpg">
+</div>
+
+<script>
+  function move() {
+    const btn = document.getElementById("no");
+    btn.style.top = Math.random() * 300 + "px";
+    btn.style.left = Math.random() * 300 + "px";
+  }
+
+  function accept() {
+    document.getElementById("question").style.display = "none";
+    document.getElementById("yes").style.display = "none";
+    document.getElementById("no").style.display = "none";
+    document.getElementById("rose").style.display = "block";
+  }
+</script>
+
+</body>
+</html>
+
